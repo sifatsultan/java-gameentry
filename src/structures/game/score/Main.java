@@ -8,19 +8,19 @@ import java.util.Scanner;
 
 public class Main {
 	// public static Text myText = new Text();
+	static String filePath = "c:/users/sifat/desktop/lorem.txt";
 
-	public static void main(String[] args) throws IOException {
-		Scanner sc = new Scanner(System.in);
-		String line = "";
-
-		ReadFile rf = new ReadFile("c:/users/sifat/desktop/names.txt");
-		String txtString = "";
+	public static void main(String[] args) throws IOException {		
 		
-		for (int i = 0; i < rf.readLines(); i++) {
-			txtString += rf.openFile()[i];
+		try {
+			Recurrence rcr = new Recurrence(filePath);
+			rcr.getRecurrenceTimes();
+//			System.out.println("The recurrenct time is : "+rcr.getRecurrenceTimes());;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
-		System.out.println(txtString);
 		
 	}
 
